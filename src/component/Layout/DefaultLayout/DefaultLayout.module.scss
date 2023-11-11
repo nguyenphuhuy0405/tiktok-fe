@@ -6,7 +6,6 @@
 }
 .content {
     flex: 1;
-    background-color: green;
     height: calc(100vh - var(--default-header-height));
     overflow-y: scroll;
 }
