@@ -1,9 +1,9 @@
 .wrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
+    //justify-content: center;
     min-width: 100px;
-    padding: 8px 0px;
+    padding: 8px 12px;
     border-radius: 4px;
     font-size: 1.6rem;
     font-weight: 700;
@@ -24,16 +24,15 @@
     }
 }
 
-//Has icon
-.leftIcon {
-    span {
-        margin-left: 8px;
-    }
+.icon {
+    display: inline-block;
+    text-align: center;
+    width: 20px;
 }
-.rightIcon {
-    span {
-        margin-right: 8px;
-    }
+//Has icon
+.icon + .title,
+.title + .icon {
+    margin-left: 8px;
 }
 
 //Primary

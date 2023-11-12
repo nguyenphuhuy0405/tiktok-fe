@@ -1,5 +1,16 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleXmark, faSpinner, faMagnifyingGlass, faPlus } from '@fortawesome/free-solid-svg-icons'
+import {
+    faCircleXmark,
+    faSpinner,
+    faMagnifyingGlass,
+    faPlus,
+    faEllipsisVertical,
+    faLightbulb,
+    faLanguage,
+    faCircleQuestion,
+    faKeyboard,
+    faMoon,
+} from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 import TippyHeadless from '@tippyjs/react/headless'
 import 'tippy.js/dist/tippy.css' // optional
@@ -9,8 +20,34 @@ import { Wrapper as PopperWrapper } from '~/component/Popper'
 import styles from './Header.module.scss'
 import AccountItem from '~/component/AccountItem'
 import Button from '~/component/Button'
+import Menu from '~/component/Popper/Menu'
 
 const cx = classNames.bind(styles)
+
+const MENU_LIST = [
+    {
+        icon: <FontAwesomeIcon icon={faLightbulb} />,
+        title: 'Trung tâm nhà sáng tạo',
+        to: '/creator',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faLanguage} />,
+        title: 'Tiếng Việt',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+        title: 'Phản hồi và trợ giúp',
+        to: '/feedback',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faKeyboard} />,
+        title: 'Phím tắt',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faMoon} />,
+        title: 'Chế độ tối',
+    },
+]
 
 function Header() {
     const [visible, setVisible] = useState(false)
@@ -90,6 +127,11 @@ function Header() {
                 <div className={cx('action')}>
                     <Button leftIcon={<FontAwesomeIcon icon={faPlus} />}>Tải lên</Button>
                     <Button primary>Đăng nhập</Button>
+                    <Menu items={MENU_LIST}>
+                        <button className={cx('more-btn')}>
+                            <FontAwesomeIcon icon={faEllipsisVertical} />
+                        </button>
+                    </Menu>
                 </div>
             </div>
         </header>
