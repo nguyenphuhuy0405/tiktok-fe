@@ -33,6 +33,21 @@ const MENU_LIST = [
     {
         icon: <FontAwesomeIcon icon={faLanguage} />,
         title: 'Tiếng Việt',
+        children: {
+            title: 'Ngôn ngữ',
+            data: [
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng việt',
+                },
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+            ],
+        },
     },
     {
         icon: <FontAwesomeIcon icon={faCircleQuestion} />,
@@ -53,6 +68,15 @@ function Header() {
     const [visible, setVisible] = useState(false)
     const show = () => setVisible(true)
     const hide = () => setVisible(false)
+
+    const handleMenuChange = (menuItem) => {
+        switch (menuItem.type) {
+            case 'language':
+                //Handle language change
+                break
+            default:
+        }
+    }
 
     return (
         <header className={cx('wrapper')}>
@@ -127,7 +151,7 @@ function Header() {
                 <div className={cx('action')}>
                     <Button leftIcon={<FontAwesomeIcon icon={faPlus} />}>Tải lên</Button>
                     <Button primary>Đăng nhập</Button>
-                    <Menu items={MENU_LIST}>
+                    <Menu items={MENU_LIST} onChange={handleMenuChange}>
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
                         </button>
