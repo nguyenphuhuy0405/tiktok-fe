@@ -1,5 +1,5 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600;700;800&display=swap');
 
 :root {
     //Color
@@ -26,14 +26,34 @@ body {
     text-rendering: optimizeSpeed;
 }
 
+//Custom button,input,a
 button,
 input,
 [tabindex] {
     outline: none;
     border: none;
+    font-family: 'IBM Plex Sans', sans-serif;
 }
 
 a[href] {
     color: var(--text-color);
     text-decoration: none;
+}
+
+//Custom tippy box
+body {
+    .tippy-box {
+        text-align: left;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 2;
+        background-color: rgba(84, 84, 84, 0.92);
+        color: rgb(255, 255, 255);
+        padding: 4px;
+    }
+    .tippy-arrow {
+        color: rgba(84, 84, 84, 0.92);
+    }
 }

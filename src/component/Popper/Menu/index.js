@@ -56,8 +56,10 @@ function Menu({ children, items = [], onChange = defaultFn }) {
             )}
             interactive="true"
             delay={[0, 700]}
-            visible
             placement="bottom-end"
+            onHide={() => {
+                setHistory((prev) => prev.slice(0, 1))
+            }}
         >
             {children}
         </TippyHeadless>
