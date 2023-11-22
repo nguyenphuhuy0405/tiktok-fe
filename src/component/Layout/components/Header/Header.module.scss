@@ -13,88 +13,40 @@
     justify-content: space-between;
     align-items: center;
 }
+//Logo
 .logo {
     min-width: 300px;
     height: 42px;
-}
-.search,
-.search-result {
-    width: 500px;
-}
-.search {
-    position: relative;
-    height: var(--search-height);
-    background-color: #f1f1f2;
-    border-radius: var(--search-border-radius);
-    display: flex;
-    align-items: center;
-    padding: 0px 0px 0px 16px;
-    &-input {
-        flex: 1;
-        background-color: transparent;
-        color: var(--black-color);
-        font-size: 1.6rem;
-        font-weight: 400;
-        height: 100%;
-        caret-color: var(--primary-color);
-    }
-    &-input:not(:placeholder-shown) ~ &-btn {
-        background-color: rgb(0, 0, 0, 0.05);
-    }
-    .clear,
-    .loading {
-        position: absolute;
-        right: calc(var(--search-btn-width));
-        width: 40px;
-        height: 100%;
-        font-size: 1.6rem;
-        color: rgba(22, 24, 35, 0.34);
-        background-color: transparent;
-    }
-    span {
-        height: calc(var(--search-height) - 18px);
-        width: 1px;
-        background-color: var(--gray-color);
-    }
-    &-btn {
-        background-color: transparent;
-        border-top-right-radius: 92px;
-        border-bottom-right-radius: 92px;
-        width: var(--search-btn-width);
-        height: 100%;
-        font-size: 2rem;
-        color: rgba(22, 24, 35, 0.75);
-        &:hover {
-            background-color: rgb(0, 0, 0, 0.05);
-            cursor: pointer;
-        }
-    }
-    &-title {
-        font-size: 1.4rem;
-        font-weight: 600;
-        color: var(--gray-color);
-        margin-left: 8px;
-    }
-    &:focus-within {
-        border: 1.5px solid var(--gray-color);
-    }
 }
 
 //Action
 .action {
     display: flex;
     align-items: center;
-    height: 42px;
+    height: 36px;
     width: 270px;
 }
 .action-btn {
     font-size: 2rem;
-    padding: 6px;
     margin-left: 16px;
     background-color: transparent;
     color: var(--text-color);
     cursor: pointer;
+    position: relative;
 }
+
+.action-btn .notification-number {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    transform: translate(50%, -50%);
+    padding: 2px 6px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-radius: 999px;
+    font-size: 1.2rem;
+}
+
 .user-avatar {
     width: 32px;
     height: 32px;

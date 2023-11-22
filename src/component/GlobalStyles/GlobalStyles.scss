@@ -1,5 +1,4 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600;700;800&display=swap');
 
 :root {
     //Color
@@ -20,7 +19,7 @@ html {
     font-size: 62.5%;
 }
 body {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Tiktok', sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
@@ -32,12 +31,34 @@ input,
 [tabindex] {
     outline: none;
     border: none;
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Tiktok', sans-serif;
 }
 
 a[href] {
     color: var(--text-color);
     text-decoration: none;
+}
+
+//Font embed
+@font-face {
+    font-family: 'Tiktok';
+    src: url('/assets/font/TikTokFont-Regular.woff2');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Tiktok';
+    src: url('/assets/font/TikTokFont-Semibold.woff2');
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'Tiktok';
+    src: url('/assets/font/TikTokFont-Bold.woff2');
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'Tiktok';
+    src: url('/assets/font/TikTokDisplayFont-Bold.woff2');
+    font-weight: 800;
 }
 
 //Custom tippy box
@@ -46,8 +67,8 @@ body {
         text-align: left;
         text-decoration: none;
         border-radius: 8px;
-        font-weight: 500;
-        font-size: 1.6rem;
+        font-weight: 600;
+        font-size: 1.5rem;
         line-height: 2;
         background-color: rgba(84, 84, 84, 0.92);
         color: rgb(255, 255, 255);

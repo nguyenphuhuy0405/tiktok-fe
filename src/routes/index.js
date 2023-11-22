@@ -8,9 +8,9 @@ import Search from '~/pages/Search'
 const publicRoutes = [
     { path: '/', component: Home },
     { path: '/following', component: Following },
-    { path: '/profile', component: Profile },
     { path: '/upload', component: Upload, layout: HeaderLayout },
     { path: '/search', component: Search, layout: null },
+    { path: '/:nickname', component: Profile },
 ]
 
 const privateRoutes = []

@@ -3,10 +3,10 @@
     align-items: center;
     //justify-content: center;
     min-width: 100px;
-    padding: 8px 12px;
+    padding: 7px 12px;
     border-radius: 4px;
     font-size: 1.6rem;
-    font-weight: 700;
+    font-weight: 600;
     border: 1px solid rgba(22, 24, 35, 0.12);
     background-color: #fff;
     color: var(--text-color);
@@ -27,7 +27,7 @@
 .icon {
     display: inline-block;
     text-align: center;
-    width: 20px;
+    height: 20px;
 }
 //Has icon
 .icon + .title,
