@@ -79,7 +79,7 @@ export const MessageIcon = ({ width = '2.6rem', height = '2.6rem', className }) 
 export const NotificationIcon = ({ width = '3.2rem', height = '3.2rem', className }) => {
     return (
         <svg
-            class={className}
+            className={className}
             width={width}
             data-e2e=""
             height={height}
