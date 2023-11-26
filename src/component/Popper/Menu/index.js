@@ -13,7 +13,7 @@ const defaultFn = () => {
     console.log('Menu change')
 }
 
-function Menu({ children, items = [], onChange = defaultFn }) {
+function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn }) {
     const [history, setHistory] = useState([{ data: items }])
     let current = history[history.length - 1]
 
@@ -57,6 +57,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
             interactive="true"
             delay={[0, 700]}
             placement="bottom-end"
+            hideOnClick={hideOnClick}
             onHide={() => {
                 setHistory((prev) => prev.slice(0, 1))
             }}

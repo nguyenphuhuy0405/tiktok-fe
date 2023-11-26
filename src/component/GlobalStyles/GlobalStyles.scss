@@ -7,6 +7,8 @@
     --white-color: white;
     --text-color: #333;
     --gray-color: rgba(22, 24, 35, 0.5);
+    //Font family
+    --font-family: 'Tiktok', sans-serif;
     //Default layout
     --default-header-height: 60px;
 }
@@ -17,9 +19,10 @@
 }
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 body {
-    font-family: 'Tiktok', sans-serif;
+    font-family: var(--font-family);
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
@@ -31,7 +34,7 @@ input,
 [tabindex] {
     outline: none;
     border: none;
-    font-family: 'Tiktok', sans-serif;
+    font-family: var(--font-family);
 }
 
 a[href] {
@@ -41,22 +44,22 @@ a[href] {
 
 //Font embed
 @font-face {
-    font-family: 'Tiktok';
+    font-family: var(--font-family);
     src: url('/assets/font/TikTokFont-Regular.woff2');
     font-weight: 400;
 }
 @font-face {
-    font-family: 'Tiktok';
+    font-family: var(--font-family);
     src: url('/assets/font/TikTokFont-Semibold.woff2');
     font-weight: 600;
 }
 @font-face {
-    font-family: 'Tiktok';
+    font-family: var(--font-family);
     src: url('/assets/font/TikTokFont-Bold.woff2');
     font-weight: 700;
 }
 @font-face {
-    font-family: 'Tiktok';
+    font-family: var(--font-family);
     src: url('/assets/font/TikTokDisplayFont-Bold.woff2');
     font-weight: 800;
 }

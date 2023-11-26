@@ -45,6 +45,13 @@ function Search() {
         inputRef.current.focus()
     }
 
+    const handleChange = (e) => {
+        const searchValue = e.target.value
+        if (!searchValue.startsWith(' ')) {
+            setSearchValue(searchValue)
+        }
+    }
+
     return (
         <TippyHeadless
             interactive
@@ -68,10 +75,7 @@ function Search() {
                     className={cx('search-input')}
                     placeholder="Tìm kiếm"
                     onFocus={visible ? hide : show}
-                    onChange={(e) => {
-                        e.target.value = e.target.value.trimStart()
-                        setSearchValue(e.target.value)
-                    }}
+                    onChange={handleChange}
                 />
                 {!!searchValue && !loading && (
                     <button className={cx('clear')} onClick={handleClear}>
@@ -84,7 +88,7 @@ function Search() {
                     </button>
                 )}
                 <span></span>
-                <button className={cx('search-btn')}>
+                <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
                     <SearchIcon />
                 </button>
             </div>
