@@ -3,6 +3,12 @@
     --search-height: 46px;
     --search-btn-width: 52px;
 
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: var(--white-color);
+
     height: var(--default-header-height);
     box-shadow: 0px 1px 1px rgb(0, 0, 0, 0.12);
 }

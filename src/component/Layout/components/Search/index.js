@@ -53,46 +53,48 @@ function Search() {
     }
 
     return (
-        <TippyHeadless
-            interactive
-            visible={visible && searchResult.length > 0}
-            render={(attrs) => (
-                <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                    <PopperWrapper>
-                        <h4 className={cx('search-title')}>Accounts</h4>
-                        {searchResult.map((item) => (
-                            <AccountItem key={item.id} data={item} />
-                        ))}
-                    </PopperWrapper>
+        <div>
+            <TippyHeadless
+                interactive
+                visible={visible && searchResult.length > 0}
+                onClickOutside={hide}
+                render={(attrs) => (
+                    <div className={cx('search-result')} tabIndex="-1" {...attrs}>
+                        <PopperWrapper>
+                            <h4 className={cx('search-title')}>Accounts</h4>
+                            {searchResult.map((item) => (
+                                <AccountItem key={item.id} data={item} />
+                            ))}
+                        </PopperWrapper>
+                    </div>
+                )}
+            >
+                <div className={cx('search')}>
+                    <input
+                        ref={inputRef}
+                        value={searchValue}
+                        className={cx('search-input')}
+                        placeholder="Tìm kiếm"
+                        onFocus={visible ? hide : show}
+                        onChange={handleChange}
+                    />
+                    {!!searchValue && !loading && (
+                        <button className={cx('clear')} onClick={handleClear}>
+                            <RemoveIcon />
+                        </button>
+                    )}
+                    {loading && (
+                        <button className={cx('loading')}>
+                            <LoadingIcon />
+                        </button>
+                    )}
+                    <span></span>
+                    <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
+                        <SearchIcon />
+                    </button>
                 </div>
-            )}
-            onClickOutside={hide}
-        >
-            <div className={cx('search')}>
-                <input
-                    ref={inputRef}
-                    value={searchValue}
-                    className={cx('search-input')}
-                    placeholder="Tìm kiếm"
-                    onFocus={visible ? hide : show}
-                    onChange={handleChange}
-                />
-                {!!searchValue && !loading && (
-                    <button className={cx('clear')} onClick={handleClear}>
-                        <RemoveIcon />
-                    </button>
-                )}
-                {loading && (
-                    <button className={cx('loading')}>
-                        <LoadingIcon />
-                    </button>
-                )}
-                <span></span>
-                <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
-                    <SearchIcon />
-                </button>
-            </div>
-        </TippyHeadless>
+            </TippyHeadless>
+        </div>
     )
 }
 

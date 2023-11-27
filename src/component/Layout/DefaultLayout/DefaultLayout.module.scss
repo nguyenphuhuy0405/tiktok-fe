@@ -3,6 +3,7 @@
 .container {
     display: flex;
     height: calc(100vh - var(--default-header-height));
+    margin-top: var(--default-header-height);
 }
 .content {
     flex: 1;

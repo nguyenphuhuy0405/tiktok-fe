@@ -38,32 +38,34 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
     console.log('history: ', history)
 
     return (
-        <TippyHeadless
-            render={(attrs) => (
-                <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
-                    <PopperWrapper>
-                        {history.length > 1 && (
-                            <MenuHeader
-                                title={current.title}
-                                onBack={() => {
-                                    setHistory((prev) => prev.slice(0, prev.length - 1))
-                                }}
-                            />
-                        )}
-                        {renderItems()}
-                    </PopperWrapper>
-                </div>
-            )}
-            interactive="true"
-            delay={[0, 700]}
-            placement="bottom-end"
-            hideOnClick={hideOnClick}
-            onHide={() => {
-                setHistory((prev) => prev.slice(0, 1))
-            }}
-        >
-            {children}
-        </TippyHeadless>
+        <div>
+            <TippyHeadless
+                interactive="true"
+                delay={[0, 700]}
+                placement="bottom-end"
+                hideOnClick={hideOnClick}
+                onHide={() => {
+                    setHistory((prev) => prev.slice(0, 1))
+                }}
+                render={(attrs) => (
+                    <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
+                        <PopperWrapper>
+                            {history.length > 1 && (
+                                <MenuHeader
+                                    title={current.title}
+                                    onBack={() => {
+                                        setHistory((prev) => prev.slice(0, prev.length - 1))
+                                    }}
+                                />
+                            )}
+                            <div className={cx('menu-body')}>{renderItems()}</div>
+                        </PopperWrapper>
+                    </div>
+                )}
+            >
+                {children}
+            </TippyHeadless>
+        </div>
     )
 }
 
