@@ -7,7 +7,7 @@ import AccountItem from '~/component/AccountItem'
 import { LoadingIcon, RemoveIcon, SearchIcon } from '~/component/Icons'
 import styles from './Search.module.scss'
 import useDebounce from '~/hooks/useDebounce'
-import * as searchService from '~/apiService/searchService'
+import * as searchService from '~/services/searchService'
 
 const cx = classNames.bind(styles)
 

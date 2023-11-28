@@ -21,8 +21,8 @@ import Menu from '~/component/Popper/Menu'
 import Image from '~/component/Image'
 import { faTiktok } from '@fortawesome/free-brands-svg-icons'
 import { MessageIcon, NotificationIcon, TiktokIcon, UploadIcon } from '~/component/Icons'
-import Search from '~/component/Layout/components/Search'
-import routesConfig from '~/config/routes'
+import Search from '~/layouts/components/Search'
+import config from '~/config'
 
 const cx = classNames.bind(styles)
 
@@ -110,7 +110,7 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <Link to={routesConfig.home} className={cx('logo')}>
+                <Link to={config.routes.home} className={cx('logo')}>
                     <TiktokIcon />
                 </Link>
 

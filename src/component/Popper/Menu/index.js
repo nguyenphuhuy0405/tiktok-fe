@@ -1,6 +1,7 @@
 import TippyHeadless from '@tippyjs/react/headless'
 import classNames from 'classnames/bind'
 import styles from './Menu.module.scss'
+import PropTypes from 'prop-types'
 
 import MenuItem from './MenuItem'
 import MenuHeader from './MenuHeader'
@@ -67,6 +68,10 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
             </TippyHeadless>
         </div>
     )
+}
+
+Menu.propTypes = {
+    children: PropTypes.node.isRequired,
 }
 
 export default Menu
